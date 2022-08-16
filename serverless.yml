@@ -1,0 +1,14 @@
+# serverless.yml
+service: my-service
+provider:
+    name: aws
+    runtime: nodejs12.x
+    deploymentMethod: direct
+    region: ap-southeast-1
+functions:
+    hello:
+        handler: handler.hello
+        events:
+            - http:
+                path: hello/get
+                method: get
